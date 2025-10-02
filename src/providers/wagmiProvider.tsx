@@ -2,14 +2,14 @@
 
 import { http, WagmiProvider, createConfig } from "wagmi";
 import { bsc } from "wagmi/chains";
-import { injected } from "wagmi/connectors";
+import { metaMask } from "wagmi/connectors";
 import { ReactNode } from "react";
 
-const config = createConfig({
+export const config = createConfig({
   chains: [bsc],
-  connectors: [injected()],
+  connectors: [metaMask()],
   transports: {
-    [bsc.id]: http(),
+    [bsc.id]: http('https://bsc-mainnet.infura.io'),
   },
 });
 

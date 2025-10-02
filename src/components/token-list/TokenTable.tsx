@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { Skeleton } from '../ui/skeleton';
 import { Button } from '../ui/Button';
 import TokenRow from './TokenRow';
 import { useTokensQuery } from '@/hooks/useTokensQuery';

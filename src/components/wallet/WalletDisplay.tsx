@@ -19,30 +19,29 @@ export function WalletDisplay({
     return (
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             {isConnected ? (
-                <>
-                    <div className="flex items-center gap-2 sm:gap-3 bg-gray-900 px-2 sm:px-3 py-1 sm:py-2 rounded-lg w-full sm:w-auto">
-                        <span className="text-green-400 text-xs sm:text-sm">
-                            BNB: {bnbBalance.toFixed(4)}
-                        </span>
+                <div className="flex items-center flex-wrap justify-center gap-2 sm:gap-3 px-2 sm:px-3 py-1 sm:py-2 rounded-lg w-full sm:w-auto">
+                    <span className="text-secondary text-xs sm:text-sm">
+                        Current BNB Balance: {bnbBalance.toFixed(2)} BNB
+                    </span>
+                    <div className='flex items-center gap-2'>
                         <Button
                             variant="outline"
                             onClick={handleDisconnect}
                             className="text-xs sm:text-sm"
                         >
-                            Disconnect
+                            <span className="text-xs truncate max-w-[80px] sm:max-w-[120px]">
+                                {address ? shortenAddress(address) : ''}
+                            </span>
                         </Button>
-                        <span className="text-gray-400 text-xs truncate max-w-[80px] sm:max-w-[120px]">
-                            {address ? shortenAddress(address) : ''}
-                        </span>
+                        <Button
+                            variant="outline"
+                            onClick={() => { /* TODO: Implement sign action */ }}
+                            className="text-xs sm:text-sm"
+                        >
+                            Sign
+                        </Button>
                     </div>
-                    <Button
-                        variant="outline"
-                        onClick={() => { /* TODO: Implement sign action */ }}
-                        className="hidden sm:block text-xs sm:text-sm"
-                    >
-                        Sign
-                    </Button>
-                </>
+                </div>
             ) : (
                 <Button
                     variant="success"

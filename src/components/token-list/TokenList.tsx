@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Skeleton } from "../ui/skeleton";
 import TokenTable from "./TokenTable";
+import { TableSkeleton } from "./TableSkeleton";
 
 export function TokenList() {
     return (
@@ -10,10 +10,8 @@ export function TokenList() {
             </h2>
             <Suspense
                 fallback={
-                    <div className="space-y-2">
-                        {[...Array(10)].map((_, i) => (
-                            <Skeleton key={i} className="h-12 w-full rounded" />
-                        ))}
+                    <div className="max-w-[1200px] mx-auto">
+                        <TableSkeleton rows={10} />
                     </div>
                 }
             >
