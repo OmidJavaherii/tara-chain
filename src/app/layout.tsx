@@ -3,11 +3,13 @@ import { WagmiContainer } from "@/providers/wagmiProvider";
 import "../styles/globals.css";
 import Image from "next/image";
 
+// Title seo desc for project 
 export const metadata = {
   title: "Tara Chain",
-  description: "Crypto",
+  description: "Crypto Project for Tarachain",
 };
 
+// RootLayout wraps pages with providers and background
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">

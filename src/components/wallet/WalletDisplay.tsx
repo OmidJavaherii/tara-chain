@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/Button';
 import { shortenAddress } from '@/lib/utils';
 
+// render wallet section
 export function WalletDisplay({
     isConnected,
     isConnecting,

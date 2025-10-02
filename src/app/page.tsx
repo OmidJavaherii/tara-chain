@@ -6,6 +6,7 @@ import { TokenList } from "@/components/token-list/TokenList";
 
 export default function Home() {
   return (
+    // renders main page sections
     <main className="min-h-screen">
       <Header />
       <HeroSection />

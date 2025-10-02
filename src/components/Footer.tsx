@@ -1,5 +1,6 @@
 import React from 'react'
 
+// render footer
 export default function Footer() {
     return (
         <div className='w-full flex justify-center px-6 pb-10'>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+// render hero section
 export default function HeroSection() {
   return (
     <section className="relative flex flex-col  md:flex-row items-center justify-center gap-4 md:gap-20 p-4 sm:px-6 lg:px-8 mb-10 md:mb-20">

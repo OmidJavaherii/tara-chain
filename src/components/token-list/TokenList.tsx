@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import TokenTable from "./TokenTable";
 import { TableSkeleton } from "./TableSkeleton";
 
+// render and handle suspense for token table
 export function TokenList() {
     return (
         <section className="py-10 px-4 md:px-6 lg:px-8">

@@ -46,6 +46,7 @@
     @apply font-heading font-bold text-4xl md:text-[64px] leading-[100%] tracking-normal text-center;
   }
 
+  /* Gradient overlay for background styling */
   .bg-gradient-overlay {
     @apply bg-gradient-to-b from-transparent via-transparent to-black/100 backdrop-blur-[30px];
   }

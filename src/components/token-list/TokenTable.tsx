@@ -6,9 +6,12 @@ import { useTokensQuery } from '@/hooks/useTokensQuery';
 import { Token } from '@/types/token';
 import { TableSkeleton } from './TableSkeleton';
 
+
 export default function TokenTable() {
+    // use query for tokens
     const { data: tokens, error, isLoading } = useTokensQuery();
 
+    // handle loading for getting data
     if (isLoading) {
         return (
             <section className="py-10 px-4 md:px-6 lg:px-8">
@@ -19,6 +22,7 @@ export default function TokenTable() {
         );
     }
 
+    // handle refreshing if not get data
     if (error) {
         return (
             <div className="text-center py-8">
@@ -30,6 +34,7 @@ export default function TokenTable() {
         );
     }
 
+    // render token table
     return (
         <section className="py-10 px-4 md:px-6 lg:px-8">
             <div className="max-w-[1200px] mx-auto">

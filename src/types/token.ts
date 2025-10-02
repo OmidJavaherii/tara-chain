@@ -1,4 +1,3 @@
-// types/token.ts
 export interface Roi {
     times: number;
     currency: string;

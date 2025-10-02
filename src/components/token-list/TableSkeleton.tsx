@@ -1,5 +1,6 @@
 import { Skeleton } from '@/components/ui/skeleton';
 
+// render skeleton for token Table
 export function TableSkeleton({ rows = 10 }: { rows?: number }) {
     return (
         <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">

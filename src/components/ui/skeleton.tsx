@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 
+// Skeleton component: Displays a pulsing placeholder for loading states
 function Skeleton({
     className,
     ...props

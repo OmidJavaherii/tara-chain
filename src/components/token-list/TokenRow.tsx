@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/Button';
 import { Token } from '@/types/token';
 
+// render each token row and details
 export default function TokenRow({ token, index }: { token: Token; index: number }) {
     return (
         <tr className="bg-[#0A1F0699]">
