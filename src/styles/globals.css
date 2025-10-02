@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-primary: #47FC28;
+  --color-secondary: #16FF44;
+  --font-sans: "Roboto", sans-serif;
+  --font-heading: "Roboto", sans-serif;
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply font-sans font-normal text-base leading-6 tracking-normal text-center;
+    font-family: var(--font-sans);
+    vertical-align: middle;
+  }
+
+  /* Base font for regular text (Roboto 400) */
+  p, span, div, button, a {
+    @apply font-sans font-normal text-base leading-6 tracking-normal;
+  }
+
+  /* Roboto SemiBold (500) for specific elements */
+  .font-medium {
+    @apply font-sans font-medium text-base leading-6 tracking-normal;
+  }
+
+  /* Roboto SemiBold (600) for specific elements */
+  .font-semibold {
+    @apply font-sans font-semibold text-base leading-6 tracking-normal;
+  }
+
+  /* Spline Sans Bold (700) for headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-4xl md:text-[64px] leading-[100%] tracking-normal text-center;
+  }
+
+  .bg-gradient-overlay {
+    @apply bg-gradient-to-b from-transparent via-transparent to-black/100 backdrop-blur-[30px];
+  }
+
+}
