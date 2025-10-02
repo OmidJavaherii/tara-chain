@@ -2,9 +2,14 @@ import Image from 'next/image';
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import { Token } from '@/types/token';
+import { ArrowDown, ArrowUp } from 'lucide-react';
 
 // render each token row and details
 export default function TokenRow({ token, index }: { token: Token; index: number }) {
+
+    // Check if price change is positive
+    const isPositive = token.market_cap_change_percentage_24h >= 0;
+
     return (
         <tr className="bg-[#0A1F0699]">
             <td className="px-4 py-3 rounded-l-lg w-[200px]">
@@ -26,7 +31,23 @@ export default function TokenRow({ token, index }: { token: Token; index: number
             <td className="px-4 py-3 w-[150px]">
                 <div className="flex items-center gap-1">
                     <span className="text-white">${token.current_price.toLocaleString()}</span>
-                    <span className="text-white">{token.market_cap_change_percentage_24h.toFixed(1)}%</span>
+                    {/* Badge with conditional styling and Lucide arrow */}
+                    <span
+                        className={`inline-flex items-center gap-1 px-2 py-1 rounded-[5px] text-sm font-medium ${isPositive ? 'bg-[#17C9641A] text-[#58C16D]' : 'bg-red-500/20 text-red-600'
+                            }`}
+                    >
+                        {isPositive ? (
+                            <>
+                                <ArrowUp className="w-3 h-3 text--[#58C16D]" />
+                                +{token.market_cap_change_percentage_24h.toFixed(1)}%
+                            </>
+                        ) : (
+                            <>
+                                <ArrowDown className="w-3 h-3 text-red-600" />
+                                -{token.market_cap_change_percentage_24h.toFixed(1)}%
+                            </>
+                        )}
+                    </span>
                 </div>
             </td>
             <td className="px-4 py-3 w-[150px]">
